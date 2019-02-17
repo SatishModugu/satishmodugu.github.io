@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Bill Split</h2>
+
+<p>Enter the total Amount of Bill:</p>
+<style>
+.relative {
+  position: fixed;
+  left: 300px;
+}
+</style>
+
+<input id="Total"type="number"><br><br>
+<div >
+Enter Satish's Personal Items Amount:
+<input id="Satish" type="number" class="relative"><br><br>
+</div>
+<div >
+Enter Suhas's Personal Items Amount	:
+<input id="Suhas" type="number" class="relative"><br><br>
+</div>
+<div >
+Enter Jayanth's Personal Items Amount:
+<input id="Jayanth" type="number" class="relative"><br><br>
+</div>
+<div >
+Enter Saikumar's Personal Items Amount:
+<input id="Saikumar" type="number" class="relative"><br><br>
+</div>
+<div >
+Enter Teja's Personal Items	Amount:
+
+<input id="Teja" type="number"  class="relative"><br><br>
+</div>
+<div >
+Common Amount to Split Between :
+<input id="Common" class="relative">
+</div>
+<input type="checkbox" name="Sat" value="1">Satish
+<br>
+<input type="checkbox" name="Suh" value="1">Satish
+<br>
+<input type="checkbox" name="Jay" value="1">Jayanth
+<br>
+<input type="checkbox" name="SaiK value="1">Sai Kuamr
+<br>
+<input type="checkbox" name="Tej" value="1">Teja
+<br>
+<br>
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+console.log("hi");
+  var t,sa,su,ja,sai,te,pesum,text,Satish,Suhas,Jayanth,Sai,Teja,temp;
+  t = document.getElementById("Total").value;
+  console.log(t);
+  sa = parseFloat(document.getElementById("Satish").value);
+  su = parseFloat(document.getElementById("Suhas").value);
+  ja = parseFloat(document.getElementById("Jayanth").value);
+  sai = parseFloat(document.getElementById("Saikumar").value);
+  te = parseFloat(document.getElementById("Teja").value);
+  console.log(sa);
+  temp= parseFloat(t)-parseFloat(sa+su+ja+sai+te);
+  console.log(temp);
+console.log(sa);  
+  Satish=parseFloat(temp/5)+parseFloat(sa);
+  console.log(Satish);
+  Suhas=parseFloat(temp/5)+parseFloat(su);
+  Jayanth=parseFloat(temp/5)+parseFloat(ja);
+  Sai=parseFloat(temp/5)+parseFloat(sai);
+  Teja=parseFloat(temp/5)+parseFloat(te);
+  
+  if (isNaN(t) || isNaN(sa) ||isNaN(su) ||isNaN(ja) ||isNaN(sai) ||isNaN(te)) {
+    text = "Input not valid";
+  } else {
+    text = "Satish:"+Satish+"     Suhas:"+Suhas+ "    Jayanth:"+ Jayanth+"   Sai:" +Sai+"     Teja:"+Teja;
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html> 
